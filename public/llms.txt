@@ -1,0 +1,12 @@
+# Flowboard
+
+> Flowboard is a simple, real-time kanban board for small teams. It is a private web app: the board itself requires signing in with an invited account, so only the sign-in page is public.
+
+## What it does
+- Custom columns; cards with title, assignee, priority (High, Medium, Low) and due date
+- Drag and drop, or keyboard (Shift + arrow keys), to move and reorder cards
+- Search and filter, light and dark themes, undo for deletes, live sync between teammates
+- Accessible by design (keyboard operable, screen-reader announcements)
+
+## Access
+Access is limited to team members added by the board owner. There is no public content or API.

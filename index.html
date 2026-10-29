@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowboard – Simple Team Kanban Board</title>
+    <meta
+      name="description"
+      content="Flowboard is a simple kanban board for small teams. Organize work in custom columns, assign cards, set priorities and due dates, and see changes live."
+    />
+    <meta name="theme-color" content="#f3f4f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14161d" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Flowboard" />
+    <meta property="og:title" content="Flowboard – Simple Team Kanban Board" />
+    <meta
+      property="og:description"
+      content="Organize work in custom columns, assign cards, set priorities and due dates, and see changes live."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Flowboard logo and the tagline: a simple team kanban board" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Flowboard – Simple Team Kanban Board" />
+    <meta
+      name="twitter:description"
+      content="Organize work in custom columns, assign cards, set priorities and due dates, and see changes live."
+    />
+    <!-- %SEO_URLS% -->
+
+    <script>
+      try {
+        var t = localStorage.getItem('theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Shown to crawlers and before JavaScript loads; React replaces it on mount. -->
+      <main style="font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem">
+        <h1>Flowboard</h1>
+        <p>
+          Flowboard is a simple kanban board for small teams. Create custom columns, add cards with an assignee,
+          priority and due date, drag them between columns, and see teammates' changes in real time. Sign in to
+          open your team's board.
+        </p>
+        <noscript><p>Flowboard needs JavaScript enabled to run.</p></noscript>
+      </main>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
