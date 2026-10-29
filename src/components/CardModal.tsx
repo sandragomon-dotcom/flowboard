@@ -77,7 +77,14 @@ export default function CardModal({ initial, onSave, onClose }: Props) {
           }
         }}
       >
-        <h2 id="modal-title">{initial ? 'Edit card' : 'New card'}</h2>
+        <div className="modal-header">
+          <h2 id="modal-title">{initial ? 'Edit card' : 'New card'}</h2>
+          <button type="button" className="modal-close" aria-label="Close" onClick={onClose}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
 
         <label>
           Title (required)
@@ -99,24 +106,26 @@ export default function CardModal({ initial, onSave, onClose }: Props) {
             </span>
           )}
         </label>
-        <label>
+        <label className="label-small">
           Assignee (optional)
           <input value={assignee} maxLength={60} onChange={(e) => setAssignee(e.target.value)} />
         </label>
-        <label>
-          Priority
-          <select value={priority} onChange={(e) => setPriority(e.target.value as Priority)}>
-            {PRIORITIES.map((p) => (
-              <option key={p} value={p}>
-                {p}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Due date (optional)
-          <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
-        </label>
+        <div className="field-row">
+          <label className="label-small">
+            Priority
+            <select value={priority} onChange={(e) => setPriority(e.target.value as Priority)}>
+              {PRIORITIES.map((p) => (
+                <option key={p} value={p}>
+                  {p}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="label-small">
+            Due date (optional)
+            <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
+          </label>
+        </div>
 
         {error && (
           <p className="form-error" role="alert">

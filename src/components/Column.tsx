@@ -166,7 +166,10 @@ export default function Column({
         ))}
         {cards.length === 0 && <p className="empty">{filtering && total > 0 ? 'No matching cards' : 'No cards'}</p>}
         <button type="button" className="column-add" onClick={() => onAdd(column.id)}>
-          + Add card{' '}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          Add card{' '}
           <span className="sr-only">to {column.name}</span>
         </button>
       </div>

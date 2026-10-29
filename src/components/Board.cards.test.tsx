@@ -25,7 +25,7 @@ describe('creating cards', () => {
 
   it("adds a card to a specific column from that column's own button", async () => {
     const { user } = await renderBoard()
-    await user.click(screen.getByRole('button', { name: '+ Add card to In Progress' }))
+    await user.click(screen.getByRole('button', { name: 'Add card to In Progress' }))
     const dialog = screen.getByRole('dialog')
     await user.type(within(dialog).getByLabelText(/^Title/), 'Review PR')
     await user.click(within(dialog).getByRole('button', { name: 'Add card' }))

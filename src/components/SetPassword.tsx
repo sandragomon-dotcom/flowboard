@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { supabase } from '../supabase'
+import AuthBrand from './AuthBrand'
 
 export default function SetPassword({ onDone }: { onDone: () => void }) {
   const [password, setPassword] = useState('')
@@ -18,9 +19,8 @@ export default function SetPassword({ onDone }: { onDone: () => void }) {
 
   return (
     <main className="auth">
-      <form className="modal" onSubmit={submit}>
-        <h1>Flowboard</h1>
-        <p className="auth-sub">Choose a new password</p>
+      <AuthBrand subtitle="Choose a new password" />
+      <form className="modal auth-card" onSubmit={submit}>
         <label>
           New password
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} autoComplete="new-password" autoFocus />

@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { supabase } from '../supabase'
+import AuthBrand from './AuthBrand'
 
 export default function AuthForm() {
   const [mode, setMode] = useState<'signin' | 'signup' | 'reset'>('signin')
@@ -32,9 +33,8 @@ export default function AuthForm() {
 
   return (
     <main className="auth">
-      <form className="modal" onSubmit={submit}>
-        <h1>Flowboard</h1>
-        <p className="auth-sub">{mode === 'signin' ? 'Sign in to your team board' : mode === 'signup' ? 'Create your account' : 'Reset your password'}</p>
+      <AuthBrand subtitle={mode === 'signin' ? 'Sign in to your team board' : mode === 'signup' ? 'Create your account' : 'Reset your password'} />
+      <form className="modal auth-card" onSubmit={submit}>
         <label>
           Email
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />

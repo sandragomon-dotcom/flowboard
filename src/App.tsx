@@ -1,6 +1,7 @@
 import type { Session } from '@supabase/supabase-js'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import AuthForm from './components/AuthForm'
+import AuthBrand from './components/AuthBrand'
 import SetPassword from './components/SetPassword'
 import { missingConfig, supabase } from './supabase'
 
@@ -33,8 +34,8 @@ export default function App() {
   if (missingConfig) {
     return (
       <main className="auth">
-        <div className="modal">
-          <h1>Flowboard</h1>
+        <AuthBrand subtitle="Setup needed" />
+        <div className="modal auth-card">
           <p className="form-error" role="alert">
             Supabase isn't configured. Copy <code>.env.example</code> to <code>.env.local</code>, set{' '}
             <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_PUBLIC_CONFIG</code>, then restart the dev server.

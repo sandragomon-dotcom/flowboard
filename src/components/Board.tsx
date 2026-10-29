@@ -20,6 +20,7 @@ import { useTheme } from '../theme'
 import { usePersistedState } from '../usePersistedState'
 import { DONE_ID, PRIORITIES, type CardData, type CardInput, type ColumnData, type Priority, type ShiftDirection, type Status } from '../types'
 import CardModal from './CardModal'
+import { BrandIcon } from './BrandIcon'
 import Column from './Column'
 import Toast from './Toast'
 
@@ -522,7 +523,12 @@ export default function Board({ email, onSignOut }: Props) {
     <>
       <div inert={modal.mode !== 'closed'}>
       <header className="app-header">
-        <h1>Flowboard</h1>
+        <div className="brand">
+          <span className="brand-tile" aria-hidden="true">
+            <BrandIcon size={20} />
+          </span>
+          <h1>Flowboard</h1>
+        </div>
         <div className="header-actions">
           <button
             type="button"
@@ -552,7 +558,10 @@ export default function Board({ email, onSignOut }: Props) {
               )}
             </svg>
           </button>
-          <span className="user-email">{email}</span>
+          <span className="avatar" title={email} aria-hidden="true">
+            {(email.trim()[0] ?? '?').toUpperCase()}
+          </span>
+          <span className="sr-only">Signed in as {email}</span>
           <button type="button" className="secondary" onClick={onSignOut}>
             Sign out
           </button>
@@ -763,7 +772,7 @@ export default function Board({ email, onSignOut }: Props) {
         </p>
       )}
       {!filtering && !loading && columns.length > 0 && cards.length === 0 && (
-        <p className="board-empty">Your board is empty. Add your first card with “+ Add card” or the button above.</p>
+        <p className="board-empty">Your board is empty. Add your first card with “Add card” or the button above.</p>
       )}
       {error && (
         <p className="banner-error" role="alert">
