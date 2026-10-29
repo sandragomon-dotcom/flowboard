@@ -89,7 +89,7 @@ button, input, select { font: inherit; color: inherit; }
 
 .toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .search-bar {
-  display: flex; align-items: center; gap: 8px; flex: 1 1 220px; max-width: 320px;
+  display: flex; align-items: center; gap: 8px; flex: 1 1 220px; max-width: 320px; min-height: 44px;
   padding: 0 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
   color: var(--muted);
 }
@@ -97,11 +97,11 @@ button, input, select { font: inherit; color: inherit; }
 .search-bar input {
   flex: 1; min-width: 0; padding: 9px 0; background: none; border: none; outline: none; color: var(--text);
 }
-.search-count { font-size: 0.8rem; white-space: nowrap; color: var(--muted); }
+.search-count { font-size: 0.875rem; white-space: nowrap; color: var(--muted); }
 
 .filter { position: relative; }
 .filter-button {
-  display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 12px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; cursor: pointer;
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text);
 }
 .filter-button:hover, .filter-button[aria-expanded='true'] { border-color: var(--accent); }
@@ -112,7 +112,7 @@ button, input, select { font: inherit; color: inherit; }
 }
 .filter-popover {
   position: absolute; top: calc(100% + 6px); left: 0; z-index: 20; width: 240px;
-  display: flex; flex-direction: column; gap: 12px; padding: 14px;
+  display: flex; flex-direction: column; gap: 12px; padding: 16px;
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -158,22 +158,22 @@ button, input, select { font: inherit; color: inherit; }
   background: var(--surface); border: 1px solid var(--accent); border-radius: 10px; color: var(--text);
 }
 .add-column {
-  display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 12px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; cursor: pointer;
   background: none; border: 1px dashed var(--border-control); border-radius: 10px; color: var(--muted); font-weight: 500;
 }
 .add-column:hover { border-style: solid; border-color: var(--accent); color: var(--text); }
 .add-column-form { display: flex; align-items: center; gap: 8px; }
 .add-column-form input {
-  min-height: 38px; padding: 0 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text);
+  min-height: 44px; padding: 0 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text);
 }
 .add-column-form div { display: flex; align-items: center; gap: 8px; }
 .primary-small {
-  padding: 6px 12px; cursor: pointer; font-weight: 500;
+  min-height: 44px; padding: 0 16px; cursor: pointer; font-weight: 500;
   background: var(--accent); border: 1px solid var(--accent); border-radius: 10px; color: var(--on-accent);
 }
 .primary-small:disabled { opacity: 0.6; cursor: default; }
 .column-clear {
-  padding: 2px 8px; font-size: 0.8rem; cursor: pointer; background: none;
+  padding: 2px 8px; font-size: 0.75rem; cursor: pointer; background: none;
   border: 1px solid var(--border); border-radius: 10px; color: var(--muted);
 }
 .column-clear:hover { color: var(--danger-text); border-color: var(--high); }
@@ -199,7 +199,7 @@ button, input, select { font: inherit; color: inherit; }
 .card-actions { display: flex; gap: 4px; }
 .card-actions button {
   border: none; background: none; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
-  color: var(--muted); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; min-height: 32px;
+  color: var(--muted); padding: 4px 8px; border-radius: 8px; font-size: 0.75rem; min-height: 32px;
 }
 .card-actions button:hover { background: var(--column); color: var(--text); }
 .card-actions .danger:hover { color: var(--danger-text); }
@@ -215,13 +215,13 @@ button, input, select { font: inherit; color: inherit; }
   clip-path: inset(50%); white-space: nowrap; border: 0;
 }
 .card-move {
-  display: none; margin-top: 10px; font-size: 0.8rem; color: var(--muted);
+  display: none; margin-top: 12px; font-size: 0.75rem; color: var(--muted);
   align-items: center; justify-content: space-between; gap: 8px;
 }
 .card-move select {
   padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); min-height: 40px;
 }
-.card-meta { display: flex; justify-content: space-between; gap: 8px; font-size: 0.8rem; color: var(--muted); }
+.card-meta { display: flex; justify-content: space-between; gap: 8px; font-size: 0.75rem; color: var(--muted); }
 .overdue { color: var(--danger-text); font-weight: 600; }
 .card-overdue {
   border-color: var(--high);
@@ -230,7 +230,7 @@ button, input, select { font: inherit; color: inherit; }
 }
 .card-overdue:hover { border-color: var(--high); }
 
-.priority { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; color: #fff; }
+.priority { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; color: #fff; }
 .priority-high { background: var(--high); }
 .priority-medium { background: var(--medium); }
 .priority-low { background: var(--low); }
@@ -345,7 +345,7 @@ button, input, select { font: inherit; color: inherit; }
   color: var(--bg);
   border-radius: 10px;
   box-shadow: 0 6px 20px rgb(0 0 0 / 0.25);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   z-index: 60;
 }
 .toast .link { color: inherit; font-weight: 600; text-decoration: underline; }
@@ -375,7 +375,7 @@ select,
 
 /* Column "+ Add card" */
 .column-add {
-  display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 4px; padding: 6px 4px; cursor: pointer; text-align: left;
+  display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 8px; padding: 6px 4px; cursor: pointer; text-align: left;
   background: none; border: none; border-radius: 10px; color: var(--muted); font-size: 0.875rem; font-weight: 500;
 }
 .column-add:hover { background: var(--surface); color: var(--text); }
