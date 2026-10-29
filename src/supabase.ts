@@ -1,7 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
 
 const url = import.meta.env.VITE_SUPABASE_URL
-const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
+// The public (publishable) key. Named "CONFIG" because some hosts refuse to save public variables with KEY in the name;
+// the older name still works.
+const key = import.meta.env.VITE_SUPABASE_PUBLIC_CONFIG || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 
 export const missingConfig = !url || !key
 

@@ -4,7 +4,7 @@ A team kanban board built with React, TypeScript and Vite, backed by Supabase (a
 
 ## Setup
 
-1. Copy `.env.example` to `.env.local` and fill in `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+1. Copy `.env.example` to `.env.local` and fill in `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLIC_CONFIG` (the publishable key).
 2. `npm install`
 3. `npm run dev`
 

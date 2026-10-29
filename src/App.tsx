@@ -37,7 +37,7 @@ export default function App() {
           <h1>Flowboard</h1>
           <p className="form-error" role="alert">
             Supabase isn't configured. Copy <code>.env.example</code> to <code>.env.local</code>, set{' '}
-            <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_PUBLISHABLE_KEY</code>, then restart the dev server.
+            <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_PUBLIC_CONFIG</code>, then restart the dev server.
           </p>
         </div>
       </main>
